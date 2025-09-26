@@ -60,7 +60,7 @@ static const double SATURATION_DOB[NJOINTS] = {
 };
 
 static const double INITIAL_POSITION[NMOTORS] = {
-  0, 0, 0, PI/5.0, 0, 0, 0, 0
+  0, 0, 0, 0, 0, 0, 0, 0
 };
 
 // safety limit position
