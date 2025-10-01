@@ -21,10 +21,10 @@ ARM_TYPE=${3:-v10}
 TMPDIR="/tmp/openarm_urdf_gen"
 URDF_NAME="${ARM_TYPE}_bimanual.urdf"
 XACRO_FILE="${ARM_TYPE}.urdf.xacro"
-WS_DIR=~/openarm_ros2_ws
+WS_DIR=/root/ws_sns
 XACRO_PATH="$WS_DIR/src/openarm_description/urdf/robot/$XACRO_FILE"
 URDF_OUT="$TMPDIR/$URDF_NAME"
-BIN_PATH=~/openarm_teleop/build/gravity_comp  # adjust if needed
+BIN_PATH=/root/ws_sns/src/openarm_teleop/build/gravity_comp  # adjust if needed
 # ===============================
 
 # Check build binary

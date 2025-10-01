@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # ========= Configuration =========
-ARM_SIDE=${1:-right_arm}            # Required: left_arm or right_arm
+ARM_SIDE=${1:-left_arm}            # Required: left_arm or right_arm
 LEADER_CAN_IF=$2                    # Optional: leader CAN interface
 FOLLOWER_CAN_IF=$3                  # Optional: follower CAN interface
 ARM_TYPE="v10"                      # Fixed for now
@@ -33,13 +33,13 @@ if [ -z "$LEADER_CAN_IF" ]; then
   if [ "$ARM_SIDE" = "right_arm" ]; then
     LEADER_CAN_IF="can0"
   else
-    LEADER_CAN_IF="can2"
+    LEADER_CAN_IF="can1"
   fi
 fi
 
 if [ -z "$FOLLOWER_CAN_IF" ]; then
   if [ "$ARM_SIDE" = "right_arm" ]; then
-    FOLLOWER_CAN_IF="can1"
+    FOLLOWER_CAN_IF="can2"
   else
     FOLLOWER_CAN_IF="can3"
   fi
@@ -49,9 +49,9 @@ fi
 LEADER_URDF_PATH="$TMPDIR/${ARM_TYPE}_leader.urdf"
 FOLLOWER_URDF_PATH="$TMPDIR/${ARM_TYPE}_follower.urdf"
 XACRO_FILE="$ARM_TYPE.urdf.xacro"
-WS_DIR=~/openarm_ros2_ws
+WS_DIR=/root/ws_moveit
 XACRO_PATH="$WS_DIR/src/openarm_description/urdf/robot/$XACRO_FILE"
-BIN_PATH=~/openarm_teleop/build/unilateral_control
+BIN_PATH=/root/ws_moveit/src/openarm_teleop/build/unilateral_control
 
 # ================================
 
